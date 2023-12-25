@@ -3,12 +3,20 @@
 ## About this Project
 This is a BoilerPlate Project that contains a Multistaged Dockerfile for dockerizing the spring boot app, also it has a Github Actions (CI/CD) .yaml file for automatially creating docker image on cloud and pushing it to registry.
 
-### Guides
-* #### Local Build with Dockerfile
+## Guides
+* ### Local Build with Dockerfile
 
-``docker build -t image_name .``
+``docker build -t satyam7world/spring_boot_docker_github_action .``
 
-* #### With Github Actions
+* ### With GitHub Actions
+>1. Have a look at [image_push.yml](https://github.com/satyam7world/SpringBootDockerGithubAction/blob/master/.github/workflows/image_push.yml) . 
+>2. Create repository secrets for dockerhub login.
+>3. action will run on new push. 
+
+* ### Running the Spring Boot Rest Server (Docker).
+1. ``docker run -d -p 80:8080 --restart=always satyam7world/spring_boot_docker_github_action``
+
+
 
 ### Reference Documentation
 
