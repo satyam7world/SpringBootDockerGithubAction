@@ -1,4 +1,4 @@
-FROM amazoncorreto:21 as builder
+FROM amazoncorretto:21 as builder
 COPY . /opt
 WORKDIR /opt
 RUN chmod 777 gradlew
