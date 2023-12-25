@@ -3,7 +3,7 @@
 ## About this Project
 This is a BoilerPlate Project that contains a Multistaged Dockerfile for dockerizing the spring boot app, also it has a Github Actions (CI/CD) .yaml file for automatially creating docker image on cloud and pushing it to registry.
 
-## Guides
+## Guide
 * ### Local Build with Dockerfile
 
 ``docker build -t satyam7world/spring_boot_docker_github_action .``
