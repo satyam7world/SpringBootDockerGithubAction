@@ -1,0 +1,40 @@
+name: Docker image Creation and Push to DockerHub
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+env:
+  DOCKER_USERNAME: ${{ secrets.USERNAME }}
+  DOCKER_PASSWORD: ${{ secrets.PASSWORD }}
+
+jobs:
+  build:
+    name: The Main Build Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout Repository
+
+      - uses: docker/setup-qemu-action@v3
+        name: Setup Docker Qemu
+
+      - uses: docker/setup-build-action@v3
+        name: Setup Docker Buildx
+
+      - uses: docker/login-action@v3
+        name: Dockerhub Login
+        with:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
+
+      - uses: docker/build-push-action@v3
+        name: Build and Push
+        with:
+          push: true
+          tag: $DOCKER_USERNAME/SpringBootDockerGithubAction:latest
