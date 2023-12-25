@@ -2,7 +2,7 @@ FROM amazoncorretto:21 as builder
 COPY . /opt
 WORKDIR /opt
 RUN chmod 777 gradlew
-RUN ./gradlew bootJar
+RUN ./gradlew bootJar --info --stacktrace
 
 FROM amazoncorretto:21-alpine3.17 as final
 EXPOSE 8080
