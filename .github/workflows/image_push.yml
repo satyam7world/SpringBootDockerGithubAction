@@ -33,4 +33,4 @@ jobs:
         name: Build and Push
         with:
           push: true
-          tags: ${{ secrets.USERNAME }}/SpringBootDockerGithubAction:latest
+          tags: ${{ secrets.USERNAME }}/spring_boot_docker_github_action:latest
